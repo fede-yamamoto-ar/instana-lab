@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-instana/administer-instana/administer/index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">1. Administer Instana | IBM AIOps Automation SWAT</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="1. Administer Instana | IBM AIOps Automation SWAT"><meta data-rh="true" name="description" content="Perform Administrative Functions with Instana"><meta data-rh="true" property="og:description" content="Perform Administrative Functions with Instana"><link data-rh="true" rel="icon" href="/fede-yamamoto-ar/instana-lab/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/"><link data-rh="true" rel="alternate" href="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/" hreflang="x-default"><link rel="stylesheet" href="/fede-yamamoto-ar/instana-lab/assets/css/styles.dcb02f3b.css">
+<script src="/fede-yamamoto-ar/instana-lab/assets/js/runtime~main.c4bf59d1.js" defer="defer"></script>
+<script src="/fede-yamamoto-ar/instana-lab/assets/js/main.5e42d57d.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/fede-yamamoto-ar/instana-lab/"><div class="navbar__logo"><img src="/fede-yamamoto-ar/instana-lab/img/ibm-watson-logo.png" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/fede-yamamoto-ar/instana-lab/img/ibm-watson-logo.png" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">IBM IT &amp; Network Automation Tiger Team</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/fede-yamamoto-ar/instana-lab/labs/instana/">Labs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/fede-yamamoto-ar/instana-lab" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/fede-yamamoto-ar/instana-lab/labs/instana/">Instana Labs</a><button aria-label="Collapse sidebar category &#x27;Instana Labs&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/applications-and-ibm-middleware/robot-shop-installation/">Applications &amp; IBM Middleware</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/">Explore Instana</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/">Administer Instana</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/">1. Administer Instana</a></li></ul></li></ul></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/fede-yamamoto-ar/instana-lab/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/fede-yamamoto-ar/instana-lab/labs/instana/"><span itemprop="name">Instana Labs</span></a><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Administer Instana</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">1. Administer Instana</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Administer Instana</h1></header>
+<p>From the Bastion host open the Firefox browser and select the <strong>Instana</strong>
+bookmark.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>If you are unsure how to get access to the Bastion host (Guacamole) see</p></div></div>
+<p><img decoding="async" loading="lazy" alt="open firefox" src="/fede-yamamoto-ar/instana-lab/assets/images/open-firefox-0f398188b48b31ca6f63f15688308eae.png" width="3930" height="2220" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>You can safely ignore the warning about the certificate being untrusted.</p><p><img decoding="async" loading="lazy" alt="untrusted-cert-advance" src="/fede-yamamoto-ar/instana-lab/assets/images/untrusted-cert-advance-954725e84d2839590377564af68c9d4c.png" width="2186" height="1460" class="img_ev3q"></p></div></div>
+<p>When prompted, enter the username and password that you updated earlier.</p>
+<ul>
+<li>Username: <strong><a href="mailto:admin@instana.local" target="_blank" rel="noopener noreferrer">admin@instana.local</a></strong></li>
+<li>Password: <strong>Passw0rd</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/login-4bfbf5fd724af14ce335dc516c1e7736.png" width="498" height="463" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="11-create-an-alert-channel">1.1: Create an Alert Channel<a href="#11-create-an-alert-channel" class="hash-link" aria-label="Direct link to 1.1: Create an Alert Channel" title="Direct link to 1.1: Create an Alert Channel">​</a></h2>
+<p>In order to notify people when problems occur in an Instana environment, you
+must first have an <strong>Alert Channel</strong>. An Alert Channel is a mechanism that is
+used to get Events out of Instana and into another system when <em>Events</em> are
+triggered.</p>
+<p>There are a variety of Alert Channels including:</p>
+<ul>
+<li>Email</li>
+<li>Slack,</li>
+<li>Watson AIOps</li>
+<li>and more...</li>
+</ul>
+<p>In this section we&#x27;ll show you how to setup an Alert Channel. Later, in the Administrative section, we&#x27;ll use that Alert
+Channel to get notifications when an Event triggers.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>In this lab Instana has already been installed with SMTP configured. If you would like to review when that was configured you can <a href="https://ibm.github.io/waiops-tech-jam/labs/instana/server-and-agent-install-lab/server-installation/#35-installing-instana" target="_blank" rel="noopener noreferrer">view the Instana installation in the Server &amp; Agent Installation lab</a>.</p><p>There is also an information section giving details on <a href="https://ibm.github.io/waiops-tech-jam/labs/instana/server-and-agent-install-lab/server-installation/#36-setting-up-smtp" target="_blank" rel="noopener noreferrer">how to configure SMTP post installation</a>.</p></div></div>
+<p>From the Instana UI select the <strong>Settings</strong> gear in the left side navigation. Then, select <strong>Alert Channel</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/select-alert-channels-8fbf8261adcca5732139ded966bfd39f.png" width="4850" height="1510" class="img_ev3q"></p>
+<p>The screen will change to show the <strong>Alert Channels</strong>. Since this is a new
+install of Instana, there are no Alert Channels defined.</p>
+<p>In the upper right portion of the screen, click on the <strong>Add Alert Channel</strong>
+dropdown and select <strong>Email</strong></p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>There are several different types of <strong>Alert Channels</strong> to integrate <strong>Events</strong>
+into a variety of solutions. The <strong>Generic Webhook</strong> is the most flexible and
+supports integration into an number of tools like ServiceNow that support
+Webhooks.</p></div></div>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/email-a01165d1b132d54d718d4f4ddd1e2aab.png" width="1732" height="1486" class="img_ev3q"></p>
+<p>After selecting <strong>Email</strong> the screen will change to show the fields required to
+configure the <strong>Email</strong> <strong>Alert Channel</strong>. An Alert Channel can be setup to
+notify specific users or to notify a large groups of users. For example, you
+might want all database related Events to be sent to a <em>database team email
+alias</em> for the DBAs. Or, you might want to notify a specific line of business or
+the IT Operations team.</p>
+<p>Here are the steps for setting up the <strong>Email</strong> channel.</p>
+<ul>
+<li>Enter a name for the Alert Channel. The name can be anything, but should be
+meaningful. For example, if the Alert Channel will be used to notify the MQ
+admins, like in this case call it something MQ related such as
+<code>MQ Email Channel</code></li>
+<li>Enter the email address to notify. Notice that there is an <strong>Add Email</strong> link
+on the right side if you want to add multiple Email addresses. For this lab
+we could use <code>mqadmins@example.com</code>.</li>
+</ul>
+<p>Next, click the <strong>Test Channel</strong> button. This will attempt to send a test Email
+to the address you specified.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-alert-channel-ea9ee825580532fac3e56e4a9ba42fd1.png" width="3888" height="1920" class="img_ev3q"></p>
+<p>Check for the test email by opening the Firefox bookmark called <strong>Mail</strong> in a new tab</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mail-bookmark-b867df47fd599807e4a7c1be859ef966.png" width="1246" height="326" class="img_ev3q"></p>
+<p>You should see the test email in the Inbox</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mail-test-email-b17a41676dce65690a0634c446a685cf.png" width="4854" height="586" class="img_ev3q"></p>
+<p>You can select the email for a preview</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mail-test-email-preview-f8449e895fd21c6b33810c8acc66e245.png" width="4838" height="2358" class="img_ev3q"></p>
+<p>After successfully testing the Alert Channel, click the <strong>Create</strong> button to
+save the <strong>Alert Channel</strong></p>
+<p><img decoding="async" loading="lazy" alt="created-alert-channel" src="/fede-yamamoto-ar/instana-lab/assets/images/created-alert-channel-7b31ea2cb3f53f42462737950ec7d1e7.png" width="3896" height="1942" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="12-create-an-analytics-based-smart-alert">1.2: Create an Analytics Based Smart Alert<a href="#12-create-an-analytics-based-smart-alert" class="hash-link" aria-label="Direct link to 1.2: Create an Analytics Based Smart Alert" title="Direct link to 1.2: Create an Analytics Based Smart Alert">​</a></h2>
+<p>In this section, you will create an analytics based <strong>Smart Alert</strong> to detect
+abnormal behavior within an application.</p>
+<p>Click on <strong>Applications</strong> and then, select the <strong>Quote of the Day</strong> application.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/applications-qotd-c639e5f24de6b814edce803f85f81378.png" width="4850" height="1446" class="img_ev3q"></p>
+<p>Click on <strong>Add Smart Alert</strong> in the lower right corner.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/smart-alert-b100320602fc7741dbadc5128544ec79.png" width="4710" height="2214" class="img_ev3q"></p>
+<p>There is a simple and an advanced mode. We&#x27;ll be using the advanced mode which
+allows you to see all of the capabilities.</p>
+<p>In the upper right corner of the dialog, select <strong>Switch to Advanced Mode</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/advanced-2b24d029640c20621c536e2acf61f409.png" width="2818" height="1646" class="img_ev3q"></p>
+<p>You&#x27;ll see that there are 4 different <strong>Blueprints</strong> for the Smart Alert</p>
+<ul>
+<li>Slow Calls</li>
+<li>Erroneous Calls</li>
+<li>HTTP Status Codes</li>
+<li>Throughput (both high and low numbers of calls)</li>
+</ul>
+<p>Leave the default of <strong>Slow Calls</strong></p>
+<p>Leave the default Threshold as <strong>Static</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/smart-alert-trigger-e08f135e29bbc16f6d512ff5d4424481.png" width="2192" height="1610" class="img_ev3q"></p>
+<p>Scroll down to the <strong>Scope</strong> section. You&#x27;ll see that there are number of options to determine which
+calls you want to analyze.</p>
+<ul>
+<li>You can analyze the calls for this application or you can analyze specific
+services or endpoints.</li>
+<li>You can analyze <strong>Inbound Calls</strong> or <strong>All Calls</strong></li>
+<li>You can include <strong>Internal Calls</strong></li>
+<li>You can include <strong>Synthetic Calls</strong></li>
+</ul>
+<p>Leave the default settings.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/scope-options-8df65177e3cd73c86372fead108095e8.png" width="2164" height="1556" class="img_ev3q"></p>
+<p>Scroll down further to the <strong>Thresholds</strong> section.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/thresholds-options-c18752227c58711a8398d8ded61ddb56.png" width="2168" height="1614" class="img_ev3q"></p>
+<p>You&#x27;ll notice that there are a variety of options including:</p>
+<ul>
+<li>The ability to change the percentile that is used for the evaluation</li>
+<li>The type of seasonality (static, daily, or weekly)</li>
+<li>whether you want to view the last 24 hours or 7 days of historical data</li>
+<li>Sensitivity.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>You can try out some of the options, but keep in mind that analytics based thresholds
+will require 5 days of data and your system has only been running for a few
+hours. You will see the below warning until you have enough data.</p><p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/lack-of-data-warn-921abf99758b1671d3d717fd68a44483.png" width="2174" height="1776" class="img_ev3q"></p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Here is an example from an app that has been running longer. When you adjust the sensitivity, the number of red triangles shown on the screen will change.
+These red triangles indicate when thresholds would trigger if you had chosen that setting.</p><p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/sensitivity-405a7cd6172c72c4e530b814a10bd994.png" width="1070" height="678" class="img_ev3q"></p><p>You don&#x27;t want to receive a lot of alerts by setting the sensitivity too high.
+Usually, if you see more than 1 or two alerts per day, the sensitivity is
+probably too high. But, it depends on the historical data that you&#x27;re looking at
+and the mission criticality of the application.</p></div></div>
+<p>In our case we will need to leave the default <strong>Static Threshold</strong> for this section as we do not have enough historical data.</p>
+<p>Scroll down further to the <strong>Time Threshold</strong> options.</p>
+<p>You&#x27;ll see that there are options for persistence over time. This ensures that
+the conditions trigger for a reasonable length of time before an alert is
+raised.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/time-threshold-options-1ad0cc4c9759f369e0f9e896272a1ecc.png" width="2156" height="1246" class="img_ev3q"></p>
+<p>We can leave this section as default too.</p>
+<p>Scroll down further to the <strong>Alert Channel</strong>. Here we can select the Email Alert Channel that you created in the previous section.</p>
+<p>Select the <strong>Select Alert Channels</strong> button.</p>
+<p><img decoding="async" loading="lazy" alt="add-mq-alert-channel" src="/fede-yamamoto-ar/instana-lab/assets/images/add-mq-alert-channel-106c28bd306993a82d35b8bd96c1a348.png" width="2210" height="742" class="img_ev3q"></p>
+<p>A dialog will open with the Alert Channel that you created earlier. Select the channel.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>It is possible to select multiple Alert Channels. For example, you can notify
+people via Email and Slack. Or, let&#x27;s assume there is a database Event, you can
+notify the DBAs and you can notify that line of business that uses the database.</p></div></div>
+<p><img decoding="async" loading="lazy" alt="add-mq-alert-channel" src="/fede-yamamoto-ar/instana-lab/assets/images/add-mq-alert-channel-to-list-10336b52d0f5a71100dc735b138db5e3.png" width="2824" height="2326" class="img_ev3q"></p>
+<p>Scroll further down on the page and you&#x27;ll see a section titled <strong>Additional
+Alert Properties</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/additional-alert-properties-83ca2caa4cec9e686c067d6b67fdebb2.png" width="2172" height="1402" class="img_ev3q"></p>
+<p>In this section you will notice that there is a default title and description.
+You can edit those fields and replace them with custom messages. As you type the
+<strong>Title</strong> and <strong>Description</strong>, the upper right corner will update with a sample
+of what the Event will look like when it triggers. There are other options such
+as setting the <strong>Alert Level</strong> and whether or not the Event should be aggregated
+into an <strong>Incident</strong>.</p>
+<p>Fill in the fields as you desire. Then, click the <strong>Create</strong> button to create
+the <strong>Smart Alert</strong></p>
+<p>The <strong>Smart Alert</strong> dialog will close and you&#x27;ll be back in the context of your
+application. You&#x27;ll see a notification letting you know your Smart Alert has been created.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-smart-alert-notification-b0ca9fe66b47600a1ffc8de1354f2d14.png" width="1332" height="666" class="img_ev3q"></p>
+<p>To see the <strong>Smart Alert</strong> that you just created, click on the
+<strong>Smart Alerts</strong> tab at the top of the screen.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-smart-alert-display-09b5b2c2f9d80d0ef8f1d861d59c9dc4.png" width="4684" height="1334" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="13-create-a-static-threshold-event">1.3: Create a Static Threshold (Event)<a href="#13-create-a-static-threshold-event" class="hash-link" aria-label="Direct link to 1.3: Create a Static Threshold (Event)" title="Direct link to 1.3: Create a Static Threshold (Event)">​</a></h2>
+<p>Now, let&#x27;s examine how a more traditional threshold is created and used in
+conjunction with Alert Channels.</p>
+<p>On the left side of the screen, select the <strong>Settings</strong> gear.</p>
+<p><img decoding="async" loading="lazy" alt="events" src="/fede-yamamoto-ar/instana-lab/assets/images/events-7d1633453e573bc58dd3310ef23e1ad3.png" width="4810" height="1862" class="img_ev3q"></p>
+<p>The Settings menu provides access to most of the administrative tasks within
+Instana. You&#x27;ll notice menus for Events, Alerts, Alert Channels, API Tokens,
+Users, Groups, Log Management Integration, and more.</p>
+<p>Ensure <strong>Events</strong> is selected</p>
+<p>You will see a list of 300+ Events that are defined as out of the box thresholds within Instana. If you want to filter the
+list, you can do that in a number of ways via the drop down lists at the top of
+the page.</p>
+<p><img decoding="async" loading="lazy" alt="filter-events" src="/fede-yamamoto-ar/instana-lab/assets/images/filter-events-17c127a875f7a96bc471fe86e92212f6.png" width="3864" height="1052" class="img_ev3q"></p>
+<p>Notice that you can filter based on the Event type, severity, entity type,
+state, or simply enter a keyword filter.</p>
+<p>Select the <strong>Entity Type</strong> dropdown list and type <code>IBM MQ</code> into the field.
+You&#x27;ll notice that a few different options show up. Each of the options is an
+Entity Type. You can filter on the Events related to the IBM MQ Queue Manager,
+Queue, Channel, etc.</p>
+<p>Select <strong>IBM MQ Queue Manager</strong> from the dropdown list.</p>
+<p><img decoding="async" loading="lazy" alt="mq-events" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-events-3cca0a3db7567b0dde6714ca3245126d.png" width="3866" height="738" class="img_ev3q"></p>
+<p>This will filter the Events to the list of Events that are written against the
+IBM MQ Queue Manager entity type. There are several out of the box threshold
+Events that will detect things like channel initiator status, queue manager
+status, publish/subscribe engine status, and more.</p>
+<p><img decoding="async" loading="lazy" alt="mq-events" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-events-list-587c5b4e962f29fa29c55f7d62251518.png" width="3852" height="2198" class="img_ev3q"></p>
+<p>Let&#x27;s create a new Event now.</p>
+<p>At the top of the page, select the <strong>New Event</strong> button.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/new-event-75f65c6a4cde87f874c421bf106b3dc0.png" width="3852" height="754" class="img_ev3q"></p>
+<p>Fill in the following information for the new Event <strong>Event Details</strong> section:</p>
+<ul>
+<li>Give your Event a name, for example; <code>IBM MQ Queue Depth</code></li>
+<li>Enter a description for the Event, for example; <code>Queue depth event</code></li>
+<li>Select <strong>Critical</strong> severity</li>
+<li>Select the option of whether you want your Event to get correlated into Incidents</li>
+<li>Select a Grace Period.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/new-event-1-5c3e564d71b170c054b66288fd01c987.png" width="3598" height="1158" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The Grace Period is a capability that allow you to avoid getting multiple alerts
+during flapping. Let&#x27;s say you are monitoring for high CPU utilization on a
+server. If CPU utilization goes High, then Low, then High over a short period of
+time, you typically only want to see <strong>ONE</strong> event. By setting a &quot;Grace Period&quot;
+of something like 60 seconds, you would only receive 1 Event during that
+interval.</p></div></div>
+<p>Fill in the following information for the <strong>Condition</strong> section:</p>
+<p>Select the dropdown and choose <strong>Built-in Metrics</strong>. Most of your thresholds will be written against these <strong>Built-in Metrics</strong>.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The choice of <em>Custom metrics</em> would only apply to custom metrics that are being
+fed into Instana. The <em>System Rules</em> are a specialized set of rules for doing
+thing like detecting that an entity is <em>offline</em>.</p></div></div>
+<p>Once you select <strong>Built-in Metrics</strong> another dropdown list will appear. The new
+dropdown list is asking for the <strong>Entity type</strong> that you are going to write your
+threshold against.</p>
+<p>In the <strong>Entity type</strong> dropdown, select <strong>IBM MQ Queue</strong>. Notice that you can
+type in letters such as <code>IBM MQ</code> to filter the list. The <strong>Time Window</strong> is the
+duration that you want to monitor and evaluate, set this to <strong>60 s</strong>.</p>
+<p>After specifying an <strong>Entity type</strong>, a new dropdown appears with a list of
+available <strong>Metrics</strong>. Select the <strong>Metric</strong> dropdown and choose <strong>Depth &gt; Queue
+Depth Percentage</strong>.</p>
+<p>After selecting the <em>Metric</em> some new dropdowns appear on the screen looking for
+the following information:</p>
+<ul>
+<li>Aggregation: Since Instana is capture data at a high interval, you can use
+Min, Max, Avg, Sum as part of your evaluation.</li>
+<li>Operator: What type of evaluation do you want to do (&gt;, &lt; =, etc.)</li>
+<li>Percentage - This field is actually different depending on the metric you are
+evaluating. In this case, you are evaluating a metric that is a percentage.</li>
+</ul>
+<p>Set the following:</p>
+<ul>
+<li>Aggregation: <strong>max</strong></li>
+<li>Operator: <strong>&gt;</strong></li>
+<li>Percentage: <strong>90</strong>.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/new-event-2-4174d024921dc26926680b6e4d630a16.png" width="3788" height="800" class="img_ev3q"></p>
+<p>These settings will cause the threshold to evaluate the <strong>Queue Depth Percent</strong>
+for 60 seconds and determine whether the maximum value during that interval
+exceeded 90%. If it did exceed 90%, then the Event will trigger.</p>
+<p>Finally, you now have to select the <strong>Scope</strong> that this threshold will apply to.</p>
+<p>Select the dropdown list. In the dropdown list, you&#x27;ll see the following options:</p>
+<ul>
+<li>You have the option of applying this threshold to an <strong>Application
+Perspective</strong>. This would limit the scope of the threshold to a specific
+application.</li>
+<li>You can use a <strong>Dynamic Focus Query</strong> to filter to a specific list of MQ
+Queues.</li>
+<li>Or, you can have your threshold apply to <strong>All Available Entities</strong>.</li>
+</ul>
+<p>Let&#x27;s make this a global Event and choose the <strong>All Available Entities</strong> option.</p>
+<p><img decoding="async" loading="lazy" alt="all-entities" src="/fede-yamamoto-ar/instana-lab/assets/images/all-entities-4e5654e633b5f2c2bfb3fddfd39befda.png" width="1994" height="436" class="img_ev3q"></p>
+<p>Click the <strong>Create</strong> button to save your new Event.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>If you wanted to apply your Event to a subset of the MQ Queues, you would
+specify a Dynamic Focus Query. The query would look something like this.</p><div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">entity.ibmmq.queue.name:abc* OR entity.ibmmq.queue.name:*xyz</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>The easiest way to formulate a <strong>Dynamic Focus Query</strong> is to go to the
+<strong>Infrastructure</strong> page and build a filter. It will guide you through the
+options. Then, copy and paste the string into the <strong>Event</strong> editor.
+<img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/infrastructure2-9ac035bbf4b23fae919c709bd56baf82.png" width="1316" height="380" class="img_ev3q"></p><p>A <strong>Dynamic Focus Query</strong> can be a complex expression using AND, OR, NOT, etc.
+to filter to a subset of the entities. These queries are build using the
+<strong>Lucene</strong> query language. For more information on the <strong>Lucene</strong> query
+language, see the project documentation.
+<a href="https://www.ibm.com/docs/en/instana-observability/current?topic=instana-filtering-dynamic-focus" target="_blank" rel="noopener noreferrer">Lucene&#x27;s Query Language</a></p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="14-setting-up-an-offline-event">1.4: Setting up an Offline Event<a href="#14-setting-up-an-offline-event" class="hash-link" aria-label="Direct link to 1.4: Setting up an Offline Event" title="Direct link to 1.4: Setting up an Offline Event">​</a></h2>
+<p>A common monitoring scenario is to setup an <strong>Offline</strong> Event to detect an
+Entity going offline. We&#x27;re going to create an <strong>Event</strong> that will detect any
+<strong>Host</strong> that goes offline.</p>
+<p>To do this, select <strong>New Event</strong> again.</p>
+<p>Enter the name <code>Host Offline</code>.</p>
+<p>Enter the description <code>A host has gone offline</code>.</p>
+<p>Select a <strong>Grace Period</strong> of <strong>10s</strong>.</p>
+<p>Select <strong>System Rules</strong> as the <strong>Source</strong> under <em>2. Condition</em>. Then, select
+<strong>Offline event detection</strong> for the <strong>System Rule</strong></p>
+<p>Next, select the scope. Choose <strong>Selected Entities Only (Dynamic Focus Query)</strong>.</p>
+<p>In the <strong>Dynamic Focus Query</strong>, you are going to specify something a little
+different. Instead of entering <strong>entity.type<!-- -->:host</strong>, we are going to use
+<strong>entity.selfType<!-- -->:host</strong>. The reason for this is that the former will filter on
+all of the hosts, but will also include the child entities that are running on
+the host. We only want to detect that the <strong>Host</strong> is offline. Therefore, we are
+going to specify <code>entity.selfType:host</code>.</p>
+<p>Copy and post the string into the Event definition.</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">entity.selfType:host</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Your Offline Event should look like this:</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/offline-event-d2cdd1c6f2971cd9c84eea3f9f1b66ca.png" width="3784" height="1970" class="img_ev3q"></p>
+<p>Click the <strong>Create</strong> button to save your Event.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>If you want to see how <strong>entity.type<!-- -->:host</strong> vs. <strong>entity.selfType<!-- -->:host</strong>
+behaves, you can open the Infrastructure view and add the queries into the
+search bar and see the results. You&#x27;ll see the same list of hosts returned
+within the UI. But, when you use <strong>selfType</strong>, you&#x27;ll notice that the server
+towers <strong>do not contain the pizza boxes</strong> representing each of the <strong>Entities</strong>.</p><p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/show-self-type-10434768ee0ff88ddc7939b8438131e0.png" width="3170" height="2650" class="img_ev3q"></p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="15-setup-an-alert-for-the-new-event">1.5: Setup an Alert for the New Event<a href="#15-setup-an-alert-for-the-new-event" class="hash-link" aria-label="Direct link to 1.5: Setup an Alert for the New Event" title="Direct link to 1.5: Setup an Alert for the New Event">​</a></h2>
+<p>Now that you have a new Event defined, you need to define an Alert.</p>
+<p>Alerts are used to notify people and teams via various Alert Channels. You
+previously reviewed the options for Alert Channels. The Alerts will be sent to
+one or more Alert Channels that you select.</p>
+<p>Select <strong>Settings</strong> on the left side navigation. Then select <strong>Alerts</strong></p>
+<p><img decoding="async" loading="lazy" alt="alerts" src="/fede-yamamoto-ar/instana-lab/assets/images/alerts-af3049b56b1f546c11e94f93e2af71b6.png" width="4832" height="1398" class="img_ev3q"></p>
+<p>Click on the <strong>New Alert</strong> button</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/new-alert-38b2f3229e0e111c851d25fc8a09f860.png" width="3870" height="728" class="img_ev3q"></p>
+<p>Give the new <strong>Alert</strong> a name. Normally, the <strong>Alert</strong> name is something
+meaningful to indicate who will be notified and the type of events being sent.
+For example, <strong>MQ Alerts</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/alert-name-ed6ed970d195651d4d989796d0639ab0.png" width="3784" height="566" class="img_ev3q"></p>
+<p>Under <strong>Events</strong> you will see that there are multiple options. You can setup an
+Alert for a particular Entity Type. For example, you might setup an Alert for
+all Oracle Database Events.</p>
+<p>Select <strong>Alert on Event(s)</strong> from the dropdown. This option allows you to select
+a specific list of Events to forward to an Alert Channel(s).</p>
+<p>Select the <strong>Add Events</strong> button.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-event-to-alert-button-98a39aa2b00f3d9846812964ac19dea2.png" width="3798" height="1178" class="img_ev3q"></p>
+<p>Initially, you will see a list of all Events.</p>
+<p>Filter the list to just a specific <strong>Entity Type</strong>. Select the <strong>Entity Type</strong>
+dropdown list and select <strong>IBM MQ Queue</strong>. You will now see a filtered list of
+Events related to IBM MQ Queues.</p>
+<p>Find the Event you created in the previous section and select the checkbox.
+Then, select the <strong>Add 1 Event</strong> button at the bottom.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-events-to-alert-a587867e3d0a9f1c47a9c01172100c6b.png" width="3246" height="1254" class="img_ev3q"></p>
+<p>You will now see the 1 selected Event listed.</p>
+<p>Scroll down to the <strong>Scope</strong> section. This determines which Entities this Alert
+will apply to.</p>
+<p>Select the <strong>Apply on</strong> dropdown list. You&#x27;ll see that you can choose one of 3
+options:</p>
+<ul>
+<li>Application Perspective: This option allows you to limit the scope of the
+alert to a specific application.</li>
+<li>Selected Entities Only: You use the dynamic focus queries to filter to a
+specific set of Entities</li>
+<li>All Available Entities: The Alert would apply to any Entity that triggered the
+Event threshold.</li>
+</ul>
+<p>Select the <strong>Selected Entities Only</strong> option</p>
+<p>A new widget will appear on the right side of the screen asking you to specify
+the <strong>Dynamic Focus Query</strong></p>
+<p>In the entry field, enter the lucene query that will filter to the queue that is
+used for the <strong>Quote of the Day</strong> application. In this case, we are looking for
+1 specific queue. Enter the following value:</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">entity.ibmmq.queue.name:CP4I.DEMO.API.Q</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/alert-scope-section-3376d17da4135315e7ae25a787a9160a.png" width="3772" height="554" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Depending on the randomness of the load generation you may not see any selection
+matches over the past 2 weeks like in the above screenshot. If you want to
+trigger this alert more easily you could edit the custom event you created and
+reduce the <strong>Grace Period</strong> to <strong>10s</strong> and the <strong>Queue Depth Percentage</strong> to
+<strong>50</strong>.</p></div></div>
+<p>Next, click on the <strong>Add Alert Channels</strong> button.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-alert-channel-button-569e6f06d57978b1007a43ac2c183bf1.png" width="3800" height="1102" class="img_ev3q"></p>
+<p>A dialog will open with a list of available <strong>Alert Channels</strong>. Select the Alert
+Channel that you created earlier.</p>
+<p>Then, click the <strong>Add 1 Channel</strong> button.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-alert-channel-5b2fc9a816be079a93d85158671f8c78.png" width="3260" height="1040" class="img_ev3q"></p>
+<p>Scroll down to the bottom. You will see an optional section where you can add
+custom payloads by adding Key/Value pairs. We&#x27;re going to skip that section.</p>
+<p>Finally, click the <strong>Create</strong> button to save your Alert.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/alert-added-f64ce996abfc3e598930794f59f31e73.png" width="3864" height="524" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You can use the <strong>Mail</strong> bookmark to view alert emails that are sent for the alerts you have setup.</p><p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/email-alerts-7614a3e20184a1b60a8a7c8befa2a693.png" width="4822" height="2944" class="img_ev3q"></p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="16-summary">1.6: Summary<a href="#16-summary" class="hash-link" aria-label="Direct link to 1.6: Summary" title="Direct link to 1.6: Summary">​</a></h2>
+<p>At this point, you have created an Event and an Alert for that Event. The next
+time the custom <strong>Event</strong> that you created triggers, an <strong>Alert</strong> will be sent
+to the <strong>Alert Channel</strong>. In this case, a Email will be sent.</p>
+<p>In this section of the lab, you learned how to create a Smart Alert, a
+traditional Alert (Event), and learned how these Alerts are routed to the
+correct people/teams via Alert Channels.</p>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/fede-yamamoto-ar/instana-lab/tree/main/labs/instana/administer-instana/1-administer/index.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">1. Explore Instana</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#11-create-an-alert-channel" class="table-of-contents__link toc-highlight">1.1: Create an Alert Channel</a></li><li><a href="#12-create-an-analytics-based-smart-alert" class="table-of-contents__link toc-highlight">1.2: Create an Analytics Based Smart Alert</a></li><li><a href="#13-create-a-static-threshold-event" class="table-of-contents__link toc-highlight">1.3: Create a Static Threshold (Event)</a></li><li><a href="#14-setting-up-an-offline-event" class="table-of-contents__link toc-highlight">1.4: Setting up an Offline Event</a></li><li><a href="#15-setup-an-alert-for-the-new-event" class="table-of-contents__link toc-highlight">1.5: Setup an Alert for the New Event</a></li><li><a href="#16-summary" class="table-of-contents__link toc-highlight">1.6: Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops" target="_blank" rel="noopener noreferrer" class="footer__link-item">CP4AIOps<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ibm.com/docs/en/noi/" target="_blank" rel="noopener noreferrer" class="footer__link-item">NOI<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ibm.com/docs/en/obi/current" target="_blank" rel="noopener noreferrer" class="footer__link-item">Instana<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ibm.com/docs/en/tarm" target="_blank" rel="noopener noreferrer" class="footer__link-item">Turbonomic<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.ibm.com/au-en" target="_blank" rel="noopener noreferrer" class="footer__link-item">IBM<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/fede-yamamoto-ar/instana-lab" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div></div></footer></div>
+</body>
+</html>

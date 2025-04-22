@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-instana/explore-instana/explore/index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">1. Explore Instana | IBM AIOps Automation SWAT</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="1. Explore Instana | IBM AIOps Automation SWAT"><meta data-rh="true" name="description" content="Explore Instana and the Quote of the Day Application"><meta data-rh="true" property="og:description" content="Explore Instana and the Quote of the Day Application"><link data-rh="true" rel="icon" href="/fede-yamamoto-ar/instana-lab/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/"><link data-rh="true" rel="alternate" href="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/" hreflang="x-default"><link rel="stylesheet" href="/fede-yamamoto-ar/instana-lab/assets/css/styles.dcb02f3b.css">
+<script src="/fede-yamamoto-ar/instana-lab/assets/js/runtime~main.c4bf59d1.js" defer="defer"></script>
+<script src="/fede-yamamoto-ar/instana-lab/assets/js/main.5e42d57d.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/fede-yamamoto-ar/instana-lab/"><div class="navbar__logo"><img src="/fede-yamamoto-ar/instana-lab/img/ibm-watson-logo.png" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/fede-yamamoto-ar/instana-lab/img/ibm-watson-logo.png" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">IBM IT &amp; Network Automation Tiger Team</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/fede-yamamoto-ar/instana-lab/labs/instana/">Labs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/fede-yamamoto-ar/instana-lab" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/fede-yamamoto-ar/instana-lab/labs/instana/">Instana Labs</a><button aria-label="Collapse sidebar category &#x27;Instana Labs&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/applications-and-ibm-middleware/robot-shop-installation/">Applications &amp; IBM Middleware</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/">Explore Instana</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/explore-instana/explore/">1. Explore Instana</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/">Administer Instana</a></div></li></ul></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/fede-yamamoto-ar/instana-lab/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/fede-yamamoto-ar/instana-lab/labs/instana/"><span itemprop="name">Instana Labs</span></a><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Explore Instana</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">1. Explore Instana</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Explore Instana</h1></header>
+<p>Follow this tutorial to explore some key Instana capabilities including:</p>
+<ul>
+<li>Monitoring of Kubernetes</li>
+<li>Monitoring of applications</li>
+<li>Monitoring of infrastructure</li>
+</ul>
+<p>From the Bastion host open the Firefox browser and select the <strong>Instana</strong>
+bookmark.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>If you are unsure how to get access to the Bastion host (Guacamole) see</p></div></div>
+<p><img decoding="async" loading="lazy" alt="open firefox" src="/fede-yamamoto-ar/instana-lab/assets/images/open-firefox-0f398188b48b31ca6f63f15688308eae.png" width="3930" height="2220" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>You can safely ignore the warning about the certificate being untrusted.</p><p><img decoding="async" loading="lazy" alt="untrusted-cert-advance" src="/fede-yamamoto-ar/instana-lab/assets/images/untrusted-cert-advance-954725e84d2839590377564af68c9d4c.png" width="2186" height="1460" class="img_ev3q"></p></div></div>
+<p>When prompted, enter the username and password that you updated earlier.</p>
+<ul>
+<li>Username: <strong><a href="mailto:admin@instana.local" target="_blank" rel="noopener noreferrer">admin@instana.local</a></strong></li>
+<li>Password: <strong>Passw0rd</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/login-4bfbf5fd724af14ce335dc516c1e7736.png" width="498" height="463" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="11-explore-kubernetes">1.1: Explore Kubernetes<a href="#11-explore-kubernetes" class="hash-link" aria-label="Direct link to 1.1: Explore Kubernetes" title="Direct link to 1.1: Explore Kubernetes">​</a></h2>
+<p>Use the left navigation to select <strong>Platforms</strong> and then <strong>Kubernetes</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/kubernetes-12e9cbbc2745240b954e3c3020f60deb.png" width="2004" height="890" class="img_ev3q"></p>
+<p>When you select <strong>Platforms</strong> in the classroom environment, you will only see
+<strong>kubernetes</strong> and <strong>SAP</strong>. But, there are additional <strong>feature
+flags</strong> that can be enabled to add in other technologies like <strong>VMware</strong>, <strong>Cloud Foundry</strong>,
+<strong>Power HMC</strong>, and <strong>Z HMC</strong>.</p>
+<p>You will see a list of Kubernetes clusters. In this environment there is the cluster Instana is running on and the K3s cluster named <strong>demo-apps</strong> where QOTD, Robot Shop and the Instana Agent have been installed.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/clusters-bdda88e09d8896f2317c8113854ba545.png" width="4578" height="1270" class="img_ev3q"></p>
+<p>Click the <strong>demo-apps</strong> cluster name to open the dashboard.</p>
+<p>You should see a screen similar to the one below where you can see overall
+utilization of the Kubernetes cluster.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/cluster-30155679f0489e3bb47a7651e1331e71.png" width="4570" height="2280" class="img_ev3q"></p>
+<p>Select some of the other tabs to explore the Kubernetes monitoring. We recommend
+you look at the <strong>Events</strong>, <strong>Nodes</strong>, and <strong>Pods</strong> tabs. When you select the
+pods tab, you will see a list of all pods running within the cluster.</p>
+<p>In the upper right corner of the <strong>Pods</strong> tab, you can filter by the current pod phase. You&#x27;ll notice that it will filter the list pods by the phase selected.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/pod-phase-e8099ec722b5c3d21d87998438d02b45.png" width="4412" height="2150" class="img_ev3q"></p>
+<p>Click on one of the pod names to the left to drill into the pod utilization details.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="12-explore-the-infrastructure-view">1.2: Explore the Infrastructure View<a href="#12-explore-the-infrastructure-view" class="hash-link" aria-label="Direct link to 1.2: Explore the Infrastructure View" title="Direct link to 1.2: Explore the Infrastructure View">​</a></h2>
+<p>Next, explore the Infrastructure view. To do this, click on the
+<strong>Infrastructure</strong> menu item on the left navigation.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/infra-zones-95297434d9df8e8317b19a092167ef9d.png" width="2676" height="2240" class="img_ev3q"></p>
+<p>You&#x27;ll notice that there is a box surrounding the <strong>towers</strong> with the zone
+names that have been configured in the Agent configurations. The box is a
+<strong>zone</strong>. In previous labs a zone name was specified during the install of the
+Instana Agent or added to the Instana Agent configuration file. The towers
+contained within the zones represents the Demo Apps Kubernetes cluster, the
+Instana server, and the virtual machine running ACE and MQ.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>If a zone name was not defined after installing an Agent the host would show up
+in the <em>&#x27;Undefined Zone&#x27;</em>.</p></div></div>
+<p>In a large environment, it can be difficult to find the server or zone that you
+are looking for. Fortunately, there are a number of ways that you can search for
+things within the Infrastructure view.</p>
+<p>In the bottom right corner, click on some of the icons and explore different
+ways of organizing and filtering the Infrastructure view.</p>
+<p><img decoding="async" loading="lazy" src="data:image/png;base64,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" width="304" height="93" class="img_ev3q"></p>
+<p>Or, you can use the lucene query language in the filter/search bar at the top of
+the page. Before beginning the search, flyover one of the towers and identify
+the hostname of one of the servers. For example <em>mqace</em></p>
+<ul>
+<li>Click in the filter bar and select <strong>Entity</strong></li>
+<li>A list will popup. Start typing <strong>host</strong> and you will see the list filtered to
+&quot;host&quot;. Once you see the single entry, select <strong>host</strong>.</li>
+<li>Once you have selected &quot;Host&quot;, another list will popup. Select <strong>name</strong>.</li>
+<li>Now, you will see <strong>&quot;entity.host.name:&quot;</strong>. After the &quot;:&quot;, you can do a
+wildcard search. For example <strong>&quot;entity.host.name:*abc*&quot;</strong>. Type in a
+wildcard string that matches the beginning of the hostname you found earlier.
+In my example, I could specify <strong>&quot;entity.host.name:*mqace*&quot;</strong> to filter on
+the MQ/ACE server.</li>
+</ul>
+<p>Once you have specified the filter, you&#x27;ll see that the infrastructure view is
+filtered to just a single server that matches your search.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/host-query-c3a61e68af6d53a6f64e651b332dc3d7.png" width="1194" height="1424" class="img_ev3q"></p>
+<p>There are many other types of queries that can be executed using the
+filter/search bar. For example, you can specify AND, OR, and NOT conditions. You
+can find detailed information on the lucene query language in the product
+documentation found here:
+<a href="https://www.ibm.com/docs/en/instana-observability/current?topic=instana-filtering-dynamic-focus" target="_blank" rel="noopener noreferrer">lucene query language</a></p>
+<p>Clear the filter at the top of the page by clicking on the <strong>X</strong></p>
+<p>Next, flyover one of the three towers that represents the Instana server. These towers are taller than the others because there are more discovered entities running on it.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/instana-flyover-cbbfa10a93c4bbe752f76f4badbd7846.png" width="2258" height="1372" class="img_ev3q"></p>
+<p>You&#x27;ll notice that a number of components were automatically discovered and are
+instrumented for monitoring.</p>
+<p>Next, flyover the MQ &amp; ACE tower.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mqace-flyover-82c9e9d38cf38bad6f048c64e599e236.png" width="2582" height="706" class="img_ev3q"></p>
+<p>This is the MQ and ACE server. You can see the MQ and ACE components along with
+a discovered JVM, and more.</p>
+<p>Next, click on the <strong>Comparison Table</strong> near the top of the page.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/comparison-table-17b1f188d2448e4e05547b61bbd441d6.png" width="4248" height="1082" class="img_ev3q"></p>
+<p>This table shows a sortable and searchable list of the Hosts that make up this
+environment. You can quickly find hosts consuming high CPU, high memory, or have
+poor health.</p>
+<p>In addition, if you select where is says <strong>Hosts</strong>, there is a dropdown list
+that allows you to see lists of JVMs, containers, etc.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/table-content-e14f742133c62225c71eba8dec5b07c2.png" width="1208" height="886" class="img_ev3q"></p>
+<p>Change from <strong>Hosts</strong> to <strong>Containerd Containers</strong> in the dropdown list and
+you&#x27;ll see a complete list of containers and their utilization and health.</p>
+<p>Switch back to the Map view by clicking on <strong>Map</strong> to the left of Comparison Table.</p>
+<p>Zoom in with the plus sign in the bottom right corner.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/plus-c72c3c6978c0ac35e253a431fe168af7.png" width="1232" height="434" class="img_ev3q"></p>
+<p>You&#x27;ll notice that each tower is actually comprised of multiple pizza boxes.
+Each one represents an <strong>Entity</strong> such as an MQ Queue Manager or an ACE
+Integration Node.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/pizza-box-e3f3878f6d00077835e0cd61f2fad4b5.png" width="3074" height="1684" class="img_ev3q"></p>
+<p>Flyover the MQ &amp; ACE server again until you see a list of all discovered Entities.
+If you only see 1 entity, move your mouse to one of the corners of the tower.
+Once you see all of the entities, click your mouse. You&#x27;ll see a dialog open</p>
+<p>Use the scroll bar to scroll down. You&#x27;ll notice that you see each of the types
+of Entities that were discovered. Expand the MQ entity type and you&#x27;ll see the
+Queue Manager that was discovered.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-ace-open-modal-34a0ac87aa89d9be572193df47e1164a.png" width="3356" height="1678" class="img_ev3q"></p>
+<p>It is possible to click on either the &quot;Open Dashboard&quot; button or the links for
+the individual entities.</p>
+<p>Click on the <strong>Open Dashboard</strong> button and we&#x27;ll examine the Host Agent
+dashboard.</p>
+<p>After you click on the button you&#x27;ll see a screen that looks like this:</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-ace-host-dashboard-09284ceb93fb4172ad0079aad02a3584.png" width="4222" height="2274" class="img_ev3q"></p>
+<p>You can see fine grained metric data for the Host operating system. Most metrics
+are gathered at 1 second granularity. This can be very valuable in diagnosing
+problems. To see the 1 second metric data, let&#x27;s shorten the time interval on
+the screen. Click on the <strong>time range</strong> dropdown in the upper right corner and
+select <strong>last minute</strong>. This will filter the data to the last minute of metric
+data.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/last-minute-92eb1ca4cfa9082e93d1117d329461a8.png" width="2590" height="1522" class="img_ev3q"></p>
+<p>Now, click the <strong>Live</strong> button in the upper right corner. This will show you
+<strong>Live</strong> data as it is streaming into the Instana server in near-realtime.</p>
+<p>After examining the data, click the <strong>time range</strong> dropdown and select <strong>Last
+Hour</strong> to look at a more typical view within Instana.</p>
+<p>Scroll down and explore the other metrics on the page.</p>
+<p>As you scroll down the page, you&#x27;ll notice a section on the left side of the
+screen that contains a list of Entity types that were discovered. This is the
+same list that you saw earlier on the Infrastructure view. By placing these
+links in context and leveraging the relationships that are discovered by
+Instana, it makes it easier to diagnose problems.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-ace-host-mq-sidebar-1053a77bd55856bdfc28dfc745db0216.png" width="4214" height="2268" class="img_ev3q"></p>
+<p>Expand the IBM MQ Queue Manager section and select the link for the
+<strong>QM1@mqace</strong> queue manager</p>
+<p>You will navigate to the dashboard for the MQ Queue Manager. Scroll down the
+page and examine the metrics. There are many tables that contain links that
+would allow you to drill into the listener, topics, queues, channels, and more.
+Let&#x27;s focus on the Channels. Scroll down to the table labeled <strong>Channels</strong>.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-channels-f07a302073986cf41054c5a406b42d4c.png" width="3306" height="1660" class="img_ev3q"></p>
+<p>Click on the blue text that says <strong>ACE.SRVCONN</strong> on the left to drill into the Channel. Examine the
+Channel metrics on the page.</p>
+<p>Next, look at the top of the screen. You&#x27;ll notice that this is a breadcrumb
+that allows you to navigate back to where you were earlier in your navigation.
+It is also possible to use the back button in your browser.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-channel-breadcrumbs-32e42e998779c81b14c25990768dd425.png" width="4228" height="2270" class="img_ev3q"></p>
+<p>If time permits at the end of the lab, you can explore some of the other
+elements within the MQ sensor or other middleware such as ACE.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="13-create-an-application-perspective-for-robot-shop">1.3: Create an Application Perspective for Robot Shop<a href="#13-create-an-application-perspective-for-robot-shop" class="hash-link" aria-label="Direct link to 1.3: Create an Application Perspective for Robot Shop" title="Direct link to 1.3: Create an Application Perspective for Robot Shop">​</a></h2>
+<p>Before we can investigate Applications within Instana, we need to create an
+<strong>Application Perspective</strong>. This section describes how to define the
+<strong>Application Perspective</strong>.</p>
+<p><strong>Application Perspectives</strong> allow you to group together a number of different
+services and endpoints into dashboard that shows the health and performance of a
+business application. In this section, you will create an <strong>Application
+Perspective</strong> for the <strong>Robot Shop</strong> application.</p>
+<p>On the left hand navigation, select <strong>Applications</strong>.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/applications-menu-9f1182ab0be047dae8df96ada8bc9599.png" width="1740" height="842" class="img_ev3q"></p>
+<p>You will see a list of all applications that are defined in the
+environment. Initially, this list only has one entry called <strong>All
+Services</strong>.</p>
+<p>Define a new application. Select the <strong>Add</strong> button in the bottom right corner.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-16bb5920f471d65fb2c44865736fd54f.png" width="4214" height="2274" class="img_ev3q"></p>
+<p>Select <strong>New Application Perspective</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-app-perspective-fe5adfb65b3fc7d313c8e2d3d86d45c0.png" width="1452" height="542" class="img_ev3q"></p>
+<p><strong>Switch to the Advanced Mode</strong> in the upper right corner. Complete the
+definition to look like below.</p>
+<ol>
+<li>Name the Application Perspective <code>Robot Shop</code></li>
+<li>Add a filter, type in <strong>kubernetes</strong> and then select <strong>namespace</strong>. Then, click
+in the <strong>value</strong> field. You&#x27;ll notice that when you click on it, the field is
+pre-populated with kubernetes namespaces that have applications being monitored.
+Select the <strong>robot-shop</strong> namespace.</li>
+<li>Select <strong>All downstream services</strong>. This selection will allow the
+application perspective to limit the scope to all transactions within the
+<em>robot-shop</em> kubernetes namespace.</li>
+<li>Select to include <strong>All Calls</strong></li>
+<li>Click the <strong>Create</strong> button to create the application perspective.</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-robot-shop-0c5d35bcca605b2871d3f85df63eaae1.png" width="2680" height="2548" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="14-create-an-application-perspective-for-qotd">1.4: Create an Application Perspective for QOTD<a href="#14-create-an-application-perspective-for-qotd" class="hash-link" aria-label="Direct link to 1.4: Create an Application Perspective for QOTD" title="Direct link to 1.4: Create an Application Perspective for QOTD">​</a></h2>
+<p>We can now repeat a similar process to the previous section to configure an
+<strong>Application Perspective</strong> for the <strong>Quote of the Day</strong> application.</p>
+<p>On the left hand navigation, select <strong>Applications</strong>.</p>
+<p>Click the <strong>&quot;Add&quot;</strong> button in the bottom right corner and select <strong>New Application Perspective</strong></p>
+<p><strong>Swich to the Advanced Mode</strong> in the upper right corner. Then complete the
+definition to look like below.</p>
+<ol>
+<li>Name the Application Perspective <code>Quote of the Day</code></li>
+<li>Add filters for Service Name, Kubernetes Namespace and Endpoint Name as per the image below. As you add filters, notice that you need to add a combination of <strong>AND</strong> and <strong>OR</strong> conditions to achieve the results that you want.</li>
+<li>Select <strong>All downstream services</strong>.</li>
+<li>Select to include <strong>All Calls</strong></li>
+<li>Click the <strong>Create</strong> button to create the application perspective.</li>
+</ol>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Pay close attention to the filters. The last filter is a <strong>not equal</strong> filter.</p></div></div>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/add-qotd-app-perspective-23ace613b4c225abda8635ecc0740cbb.png" width="2680" height="2544" class="img_ev3q"></p>
+<p>What this Application Perspective is doing is the following:</p>
+<ul>
+<li>We are including the MQ Service by matching any service that contains the
+Queue Manager Name of <strong>QM1@mqace</strong>.</li>
+<li>We&#x27;re including any service that includes the name of our ACE Integration
+Server named <strong>mqace-BK1<!-- -->:EG2</strong>.</li>
+<li>We&#x27;re including any transactions that are in the <strong>qotd</strong> kubernetes
+<strong>namespace</strong> where the Quote of the Day application is installed. Using
+namespaces makes it very easy to build <strong>Application Perspectives</strong> for cloud
+native applications.</li>
+<li>Finally we added a filter to <strong>filter OUT</strong> any trace that has an endpoint
+name of <strong>GET /health</strong>. The <strong>GET /health</strong> requests are the readiness probes
+(heartbeating) that happens within kubernetes to ensure the pods are healthy.
+These transactions are not part of the application, so we want to exclude
+them.</li>
+</ul>
+<p>You have now created an Application Perspective for the Quote of the Day application. In the next section, you&#x27;ll
+explore the application (it can take few minutes before the data for application is populated).</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="15-explore-the-application">1.5: Explore the Application<a href="#15-explore-the-application" class="hash-link" aria-label="Direct link to 1.5: Explore the Application" title="Direct link to 1.5: Explore the Application">​</a></h2>
+<p>After creating the application, your screen should have automatically changed
+context to show the Application Perspective that you just defined.</p>
+<p>Initially, you probably won&#x27;t see any metrics on the screen. In the upper right
+corner, click the <strong>Live</strong> button and change the filter to <strong>Last 5 minutes</strong> and within a short amount of time you should
+start to see metrics in the widgets.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-stats-b551e1a70f647ad2286d9cc7eae04dc9.png" width="4680" height="2496" class="img_ev3q"></p>
+<p>On this page you can see the golden signals which include <strong>transaction
+volumes</strong>, the <strong>number of erroneous calls</strong>, and <strong>latency</strong>. You&#x27;ll also see
+the top services that make up the application.</p>
+<p>You&#x27;ll notice a number of tabs across the top of the screen. Explore these tabs.
+In particular, let&#x27;s take a look at the <strong>Dependencies</strong> tab.</p>
+<p>Click on the <strong>Dependencies</strong> tab.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/dependencies-17058a28f1e48e0facabd22927136a3f.png" width="4682" height="2502" class="img_ev3q"></p>
+<p>On the dependencies tab, you&#x27;ll see a full topology of the application services.
+This topology is discovered automatically. You can see transactions flowing
+between the different nodes in the topology. Most of these services are node.js
+based cloud-native services. There should be also be a node with a name that
+ends in <strong>BK1<!-- -->:EG2</strong>. BK1 is the ACE Integration Node and EG2 is the ACE
+Integration Server. The QM1 node in the topology is the MQ Queue Manager named
+<strong>QM1</strong>.</p>
+<p>Fly your mouse over the <strong>QM1@mqace</strong> node. Flying over any node in the dependency
+graph will show you a summary of the traces going through that service. You&#x27;ll
+see the percentage of calls that are erroneous and the latency of the calls.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/flyover-qm-3836738200ffe563909b63aef7652eb8.png" width="1178" height="592" class="img_ev3q"></p>
+<p>Click on the <strong>QM1@mqace</strong> node. Notice that there are 3 options that would allow
+you to navigate to the MQ dashboard, the transaction Flow within MQ, or analyze
+the transaction calls through MQ. For now, we&#x27;ll skip this navigation, but we
+suggest you explore those options later.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/click-qm-47a620be95b866228e59ab61dddfa43d.png" width="964" height="464" class="img_ev3q"></p>
+<p>Click on <strong>&quot;Upstream/Downsteam&quot;</strong> near the top of the page. This will allow you
+to see a list of Upstream and Downstream services for the application.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/upstream-downstream-60ea3e1b93548e99e632a4b36ad3534d.png" width="3902" height="1868" class="img_ev3q"></p>
+<p>Click on <strong>&quot;Stack&quot;</strong> where you can view the Application, Kubernetes, and
+Infrastructure stack that makes up the application.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-stack-8f6f27886fd2de862018d7b76ec0f29c.png" width="3096" height="2052" class="img_ev3q"></p>
+<p>All of this contextual and relationship data helps you analyze and debug your
+applications to get to the root cause as quickly as possible. In addition, Instana&#x27;s
+built analytics uses this data to automatically group multiple related
+<strong>Events</strong> into a single <strong>Incident</strong> for diagnosis.</p>
+<p>Close the <strong>Stack</strong> dialog by either clicking on the <strong>Stack</strong> button or
+somewhere else on the background of the Instana GUI.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>There are a few other tabs on this screen that you can explore on your own.</p></div></div>
+<p>Click on the <strong>Services tab</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-services-6cd9423181bfc0be5b2a7bd3ff4dfaf3.png" width="4656" height="2272" class="img_ev3q"></p>
+<p>You will see a list of services that make up the application.</p>
+<p>Click on the <strong>qotd-engraving</strong> link on the left Column. The qotd-engraving
+service is the service that calls the ACE flow and then puts a message on the MQ
+queue. We want to explore this service in more detail.</p>
+<p>You should see a page showing the transactional data filtered down to just the
+qotd-engraving service.</p>
+<p>Click on the <strong>Analyze Calls</strong> button to analyze the individual transactions
+that are executing within the <strong>qotd-engraving</strong> service.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/analyze-calls-0a5c62c4cfe035f6db0598468eabc67c.png" width="4626" height="1414" class="img_ev3q"></p>
+<p>This will take you to a screen showing all of the different types of calls
+taking place within the qotd-engraving service. At the top, there is a summary
+of all calls in terms of transaction rates, return codes, erroneous calls, and
+latency.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/analyze-qotd-engraving-9cc9199117e5a225a73f25b9dd90a107.png" width="4640" height="2488" class="img_ev3q"></p>
+<p>On the right side, click the arrow to expand the list of qotd-engraving <strong>&quot;POST
+/order&quot;</strong> calls. Instana is capturing 100% of the transactions so that you don&#x27;t
+miss intermittent problems that might be occurring in the environment.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>The QOTD application simulates failure events randomly. If you only see red <em>&quot;Contains Errors&quot;</em> status call you can either wait until the successful calls start again or adjust the view time at the top right of the page to display some successful calls.</p><p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-error-calls-47746b5bf2eea24e00f3178f8a8b45fc.png" width="4666" height="2486" class="img_ev3q"></p></div></div>
+<p>Select one of the successful requests.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/engraving-calls-05a28f892cdc2f4b8d50e72fa704539c.png" width="4024" height="1522" class="img_ev3q"></p>
+<p>You are now looking at the tracing data for a single transaction. At the top of
+the screen, you will see a summary of the latency, sub-calls and timeline. On
+the right side of the screen, you&#x27;ll see the details and stack trace.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/call1-fbf89f9b11042e1fc54930f5ad9b55e5.png" width="3862" height="2308" class="img_ev3q"></p>
+<p>Scroll to the bottom of the screen and you will see  the service endpoint list</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-engraving-service-endpoint-list-cc044099f6fdda1329f230ff1f06cec9.png" width="2388" height="1182" class="img_ev3q"></p>
+<p>Scroll back up and you will see a detailed call stack <strong>Calls</strong>. The call stack gives you the timing and sequence of the call
+going through the application.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If errors were captured in the logs, they would be shown at the bottom of the
+screen, below the call stack.</p></div></div>
+<p>If you select the text on the left or the timeline bar, the <strong>Details &amp; Stack
+Trace</strong> context to the right of the page will change.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/qotd-analyze-engraving-calls-f08a5fc5e9722c8a5b8fb8eb7f763a9c.png" width="2388" height="938" class="img_ev3q"></p>
+<p>Explore the different types of calls going through this transaction by selecting
+the individual call. When you select an entry, examine the detailed information
+on the right.</p>
+<p>When you select the Node.js App Server requests, you&#x27;ll see the <strong>StackTrace</strong>
+on the right hand side. Within the <strong>StackTrace</strong>, click one of the URLs.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/open-stacktrace-ebc2b57387841df62af6700dc39be838.png" width="3828" height="1984" class="img_ev3q"></p>
+<p>When you click on the link, Instana will decompile the code and show you the
+lines of code. The exact line of code that is executing will be highlighted in
+yellow.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/line-of-code-2f85b12a931ead00230c29c14097773d.png" width="3186" height="2418" class="img_ev3q"></p>
+<p>Click the <strong>X</strong> in the upper right corner to close the dialog.</p>
+<p>When you select the ACE portions of the call Stack (gen.supplychain,
+msgFlowTransaction, and postOrder) you will see key information including the
+flow name, Integration Node, Integration Server, IP address, and more on the
+right side of the screen.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/ace-analyse-c3746ebde48f4fb375d1b62c5a6c0810.png" width="3818" height="2302" class="img_ev3q"></p>
+<p>When you select the MQ portion of the call stack, you&#x27;ll see key information
+related to the MQ environment on the right. The information includes the Queue
+Manager, Queue Name, and the message ID that was posted on the queue.</p>
+<p>Scroll down to the very bottom on the right side of the screen and you will see
+a link named <strong>CP4I.DEMO.API.Q</strong>. Click on the <strong>CP4I.DEMO.API.Q</strong> link and
+you will navigate to the Queue page of the MQ sensor for the CP4I.DEMO.API.Q
+queue. Instana places these links in context to make it easier to diagnose
+problems.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/mq-link-1917a434d0d3982988fd42c0d66c534b.png" width="3852" height="2268" class="img_ev3q"></p>
+<p>Earlier, you explored the Queue Manager and the MQ Channels. You&#x27;re now looking
+at the queue that is being used by this application. You&#x27;ll notice key
+information like the oldest message on the queue, queue depth, input/output
+rates, and more.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/queue-one-d40b0cbd7ea13757d86f400dcf01d472.png" width="4656" height="2498" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="16-websites-and-mobile-app-monitoring">1.6: Websites and Mobile App Monitoring<a href="#16-websites-and-mobile-app-monitoring" class="hash-link" aria-label="Direct link to 1.6: Websites and Mobile App Monitoring" title="Direct link to 1.6: Websites and Mobile App Monitoring">​</a></h2>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>When Robot Shop was installed it included a load generator. The load
+generator is a bot accessing the Robot Shop web application and mimics real
+users so that you can see metrics collected by Instana.</p></div></div>
+<p>Next, let&#x27;s take a look at <strong>Website</strong> and <strong>Mobile Application</strong> Monitoring. In
+this environment, Instana does not include any native mobile applications,
+however you should know that Instana can gather End User Monitoring (EUM) data
+from Mobile Applications too. For now, we&#x27;ll investigate the website monitoring.</p>
+<p>Using the left side navigation, select <strong>Websites &amp; Mobile Apps</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/websites-and-mobile-apps-b600e676cf83e5c8e7a9efca630dc2c0.png" width="1568" height="582" class="img_ev3q"></p>
+<p>You will see a list of websites that are being monitored. In this environment,
+you&#x27;ll see the <strong>Robot Shop</strong> application website. Click on the blue link for
+the <strong>Robot Shop</strong> website to drill down for more details.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/click-robot-shop-eum-4d820137092d51bb238106bcf4d3bc30.png" width="4646" height="1156" class="img_ev3q"></p>
+<p>Explore the additional data available within the website monitoring by clicking
+on some of the other tabs.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/robot-shop-dash-7142a582083254bdd5a8895fc20a5540.png" width="4654" height="2494" class="img_ev3q"></p>
+<p>Next, explore the <strong>Filters</strong> that you see at the top of the screen.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/website-filters-befeec0e69832f335426651515e61a12.png" width="4664" height="1120" class="img_ev3q"></p>
+<p>In this environment, the filters will not be limited in their usefulness because there is
+only automated workload coming from a load generation script. But, usually, you can use
+this information to filter the web traffic down to specific browser types, OS&#x27;s,
+geographic locations and key metadata tags. This can be very useful in
+identifying whether specific network locations, browser, or OS&#x27;s are having
+performance problems. If you want to see typical EUM data, you can look at one
+of the IBM sales or Business Partner demo environments.</p>
+<p>At the top of the screen, click on the <strong>Analyze Page Loads</strong> button</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/analyze-page-loads-9b2486b153784cc0f86394673f8758e6.png" width="2156" height="690" class="img_ev3q"></p>
+<p>You will see a detailed list of the web requests grouped by URL path.</p>
+<p>Select the only <strong>Group</strong> available. This will give you a page that is filtered to the transactions for just
+that single URL path. As with Tracing, Instana is capturing 100% of the web
+transactions.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/robot-shop-focus-group-7cdb2738fd863a527513a88a30bbb0f3.png" width="4656" height="2006" class="img_ev3q"></p>
+<p>Next, select one of the requests.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/robot-shop-select-req-3698afd84a26fccb91419156790ac134.png" width="4000" height="1354" class="img_ev3q"></p>
+<p>You will see a detailed page showing the EUM data and more. At the top of the
+page, you&#x27;ll notice that you can see the user that made the request. This
+sensitive data can be omitted by Instana if the customer desires. You&#x27;ll also
+see the Browser version and operating system that was used to access the web
+page. Depending on the environment, you&#x27;ll also see geolocation data for where
+the person accessed the application. In some cases the private IP addresses are
+not mapped and the <strong>User Location</strong> data will be empty.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/robot-shop-eum-req-ac0048f447c57208e5e02ef67c26b814.png" width="4660" height="2506" class="img_ev3q"></p>
+<p>Scroll down on the page and you&#x27;ll see a detailed breakdown of the request
+including timings for the key page content.</p>
+<p>Expand one of the entries on the right by clicking the down arrow to view more
+details.</p>
+<p>We are not going to do it for this lab, but if you click on the <strong>View Backend
+Trace</strong> button, you can investigate the backend trace data that you saw earlier
+in the lab.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/robot-shop-web-trace-a6069d74027a18336843b1d91190c028.png" width="3746" height="1978" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="17-unbound-analytics">1.7: Unbound Analytics<a href="#17-unbound-analytics" class="hash-link" aria-label="Direct link to 1.7: Unbound Analytics" title="Direct link to 1.7: Unbound Analytics">​</a></h2>
+<p>Next, we&#x27;re going to investigate Instana&#x27;s unbounded analytics. Navigate to the
+<strong>Analytics</strong> using the left side navigation.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/analytics-21927ae3e4e18672aaf89ce19d6fa1d0.png" width="1140" height="826" class="img_ev3q"></p>
+<p>Initially, you will see a screen showing 100% of the <strong>Application Calls</strong> that
+are happening in the environment.</p>
+<p>Select the dropdown at the top of the page labeled <strong>Applications / Calls</strong> to
+view other options. For example, you could analyze the traces, websites, mobile
+applications, or profiles. For now, close the dialog and we&#x27;ll analyze the
+<strong>Application Calls</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/type-of-calls-f8d4b82523d57966b76edc6849644576.png" width="1600" height="1108" class="img_ev3q"></p>
+<p>One of the key Instana capabilities is <strong>Unbounded Analytics</strong>. This allows you
+to apply ad-hoc queries to easily find the data you are looking for. On the
+screen, you&#x27;ll see a couple of different ways that you can query/filter the
+metrics.</p>
+<p>Firstly ensure your time filter is set to show data for the last hour. Once that is set, on the left side, you&#x27;ll see a number of ways to filter. Expand the <strong>Applications</strong> dropdown arrows to see the available options. Then, select one of the checkboxes to filter
+the data.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/analytics-filter-qotd-aa2461f7d3e27e10a04b32859a318c5f.png" width="4678" height="2500" class="img_ev3q"></p>
+<p>Now, uncheck the checkbox to remove the filter.</p>
+<p>Another option is to use the <strong>filter</strong> and <strong>group</strong> options at the top of the
+page. Let&#x27;s try out an example. Let&#x27;s say you want to find the slowest SQL
+statements in the environment. Let&#x27;s try to implement a <strong>filter</strong> and <strong>group</strong>
+to accomplish that.</p>
+<p>Select the <strong>Add Filter</strong> button at the top of the page. Then, select <strong>Call
+Type</strong> and select <strong>Database</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/upper-filter-4a82c42bbff796581e2ca03b8fd6ae39.png" width="1444" height="122" class="img_ev3q"></p>
+<p>This will filter the calls to just the database calls. But, the calls are not
+organized in a meaningful way. So, let&#x27;s use the <strong>group</strong> option to group the
+statements.</p>
+<p>Click on the <strong>Add Group</strong> button. Then, type <strong>database</strong> in the filter box and
+select <strong>Statement</strong></p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/group-statements-aac9c1e117d969c3b4acdf3d044e2115.png" width="1910" height="1282" class="img_ev3q"></p>
+<p>This will group all of the Database statements by unique SQL statements. You can
+then take these statements and sort them by latency, erroneous calls, etc.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/sort-5bc34f59df47cc593ddb1d214ba5d778.png" width="4670" height="1684" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>You also have the option <strong>select metrics</strong> to choose the metrics that you want
+to see on the screen. For example, change latency from Average to 95th
+percentile.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="18-sharing-instana-urls">1.8: Sharing Instana URLs<a href="#18-sharing-instana-urls" class="hash-link" aria-label="Direct link to 1.8: Sharing Instana URLs" title="Direct link to 1.8: Sharing Instana URLs">​</a></h2>
+<p>Let&#x27;s explore one more key capability within Instana.</p>
+<p>In the upper right corner of the screen, there is a <strong>Share</strong> button.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/share-button-1de8b19a319543a5b8911981bfeab1d2.png" width="1300" height="722" class="img_ev3q"></p>
+<p>Click <strong>Share</strong> and a dialog will open.</p>
+<p>From here you can share a link that includes your current context so that when the recipient opens the link, it will take them to a
+screen with the exact same view you are seeing. This can be very valuable when collaborating with team members to diagnose a problem.</p>
+<p>Within the dialog, there is also a checkbox to <strong>Lock current time range</strong>. By locking the current time range, when the link it opened, it will take the person to a view with the exact same time range that you are looking at. Otherwise, they are taken to the most recent time range.</p>
+<p><img decoding="async" loading="lazy" src="/fede-yamamoto-ar/instana-lab/assets/images/share-dialog-e415068055b461f242946a147d56d055.png" width="2374" height="1984" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="19-summary">1.9: Summary<a href="#19-summary" class="hash-link" aria-label="Direct link to 1.9: Summary" title="Direct link to 1.9: Summary">​</a></h2>
+<p>In this exercise lab have explored some of the key capabilities within Instana.
+You explored Kubernetes monitoring and the Infrastructure view. You also created
+two Application Perspectives for two different demo applications. You learned
+about website monitoring and the different types of End User Monitoring data
+that Instana can collect. Finally, you reviewed Instana unbounded analytics
+capabilities.</p>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/fede-yamamoto-ar/instana-lab/tree/main/labs/instana/explore-instana/1-explore/index.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/fede-yamamoto-ar/instana-lab/labs/instana/applications-and-ibm-middleware/ibm-middleware/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">2. Monitoring IBM Middleware</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fede-yamamoto-ar/instana-lab/labs/instana/administer-instana/administer/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">1. Administer Instana</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#11-explore-kubernetes" class="table-of-contents__link toc-highlight">1.1: Explore Kubernetes</a></li><li><a href="#12-explore-the-infrastructure-view" class="table-of-contents__link toc-highlight">1.2: Explore the Infrastructure View</a></li><li><a href="#13-create-an-application-perspective-for-robot-shop" class="table-of-contents__link toc-highlight">1.3: Create an Application Perspective for Robot Shop</a></li><li><a href="#14-create-an-application-perspective-for-qotd" class="table-of-contents__link toc-highlight">1.4: Create an Application Perspective for QOTD</a></li><li><a href="#15-explore-the-application" class="table-of-contents__link toc-highlight">1.5: Explore the Application</a></li><li><a href="#16-websites-and-mobile-app-monitoring" class="table-of-contents__link toc-highlight">1.6: Websites and Mobile App Monitoring</a></li><li><a href="#17-unbound-analytics" class="table-of-contents__link toc-highlight">1.7: Unbound Analytics</a></li><li><a href="#18-sharing-instana-urls" class="table-of-contents__link toc-highlight">1.8: Sharing Instana URLs</a></li><li><a href="#19-summary" class="table-of-contents__link toc-highlight">1.9: Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops" target="_blank" rel="noopener noreferrer" class="footer__link-item">CP4AIOps<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ibm.com/docs/en/noi/" target="_blank" rel="noopener noreferrer" class="footer__link-item">NOI<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ibm.com/docs/en/obi/current" target="_blank" rel="noopener noreferrer" class="footer__link-item">Instana<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ibm.com/docs/en/tarm" target="_blank" rel="noopener noreferrer" class="footer__link-item">Turbonomic<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.ibm.com/au-en" target="_blank" rel="noopener noreferrer" class="footer__link-item">IBM<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/fede-yamamoto-ar/instana-lab" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div></div></footer></div>
+</body>
+</html>
